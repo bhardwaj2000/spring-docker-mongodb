@@ -1,0 +1,14 @@
+version: "3"
+services:
+  manish172000mongodb:
+    image: mongo:latest
+    container_name: "manish172000mongodb"
+    ports:
+      - 27017:27017
+  spring-docker-mongodb:
+    image: spring-docker-mongodb:1.0
+    container_name: spring-docker-mongodb
+    ports:
+      - 8080:8080
+    links:
+      - manish172000mongodb
